@@ -60,6 +60,7 @@ system = ss(A,B,C,D);
 % Vmc = 0.001;
 Q = eye(16);
 Q(1,1) = 3;Q(2,2)=3;
+Q1 = eye(12);
 %Q(1,1)=Pmc; Q(2,2)=Pmc; Q(3,3)=Pmc;
 %Q(4,4)=Vmc; Q(5,5)=Vmc; Q(6,6)=Vmc;
 
@@ -69,7 +70,7 @@ R = eye(4);
 
 % Linear Controller Gain
 k = lqr(A, B, Q, R);
-k1 = lqr(A1, B1, Q, R); % without integral term
+k1 = lqr(A1, B1, Q1, R); % without integral term
 
 %% Longberg Observer
 % observability
